@@ -116,21 +116,13 @@ app.post("/auth",(req,res)=>{
                 res.sendFile(__dirname+"/failure.html");
             }else{
                 res.write("<h1 style='text-align:center'>Basmalla Dokki</h1>");
-                res.write("<table>")
-                res.write("<th>Name</th><th>phone</th>");
+                res.write("<table><tr>")
+                res.write("<th>Name</th><th>phone</th></tr>");
                 reservation.forEach(element => {
                     if(element.center == "Basmalla-Dokki")
-                    res.write("<td>"+element.name+"</td><td>"+element.studentNumber+"</td>");
+                    res.write("<tr><td>"+element.name+"</td><td>"+element.studentNumber+"</td></tr>");
                 });
-
-                res.write("<hr>");
-                res.write("<h1 style='text-align:center'>El-Nakheel</h1>");
-                res.write("<h2><pre>      Name                                phone</pre><h2>");
-                reservation.forEach(element => {
-                    if(element.center == "El-Nakheel")
-                    res.write("<pre>"+element.name+"                   "+element.studentNumber+"</pre>");
-                });
-
+                res.write("</table>");
                 res.send();
             }
         });
