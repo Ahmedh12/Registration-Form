@@ -117,7 +117,7 @@ app.post("/auth",(req,res)=>{
             }else{
                 res.write("<h1 style='text-align:center'>Basmalla Dokki</h1>");
                 res.write("<table><tr>")
-                res.write("<th>Name</th><th>phone</th></tr>");
+                res.write("<th style='padding:20px'>Name</th><th style='padding:20px'>phone</th></tr>");
                 reservation.forEach(element => {
                     if(element.center == "Basmalla-Dokki")
                     res.write("<tr><td style='padding:20px'>"+element.name+"</td><td style='padding:20px'>"+element.studentNumber+"</td></tr>");
