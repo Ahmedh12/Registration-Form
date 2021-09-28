@@ -1,0 +1,21 @@
+{
+  "name": "mahdy-registeration",
+  "version": "1.0.0",
+  "description": "This is the registration form for 1st secondary",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed Hussien",
+  "license": "ISC",
+  "engines": {
+   "node": "14.17.6" 
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  }
+
+  
+}
