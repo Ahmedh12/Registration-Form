@@ -13,7 +13,8 @@ const reservationSchema = new mongoose.Schema({
     email: { type: String, unique: true },
     studentNumber : { type: String, unique: true },
     parentNumber : { type: String, unique: true },
-    center: { type: String, required: true }
+    center: { type: String, required: true },
+    grade: { type: String, required: true }
 });
 
 const Reservation = mongoose.model("reservation",reservationSchema);
@@ -37,6 +38,7 @@ app.post("/",(req,res)=>{
         studentNumber : req.body.st_no,
         parentNumber : req.body.pr_no,
         center : req.body.center,
+        grade : req.body.Grade
     })
 
     if(req.body.st_no == req.body.pr_no)
@@ -52,6 +54,11 @@ app.post("/",(req,res)=>{
     if(req.body.center == " ")
     {
         res.sendFile(__dirname+"/centerError.html"); 
+    }
+
+    if(req.body.Grade == " ")
+    {
+        res.sendFile(__dirname+"/gradeError.html"); 
     }
 
     Reservation.find({email : req.body.email},(err,reservation)=>{
